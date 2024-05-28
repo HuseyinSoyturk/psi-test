@@ -206,7 +206,7 @@ const DunyaIliskin = () => {
     ];
 
     const handleDownload = () => {
-        html2canvas(document.getElementById('table')).then(function (canvas) {
+        html2canvas(document.getElementById('table_1')).then(function (canvas) {
             canvas.toBlob((blob) => {
                 saveAs(blob, "Dünyaya İlişkin Varsayımlar Ölçeği.png");
             });
@@ -222,7 +222,7 @@ const DunyaIliskin = () => {
         <Title level={5}>4 = Çok Az Katılıyorum</Title>
         <Title level={5}>5 = Oldukça Katılıyorum</Title>
         <Title level={5}>6 = Tamamen Katılıyorum</Title>
-        <Table rowKey={({ index }) => index} id="table" dataSource={dataSource} columns={columns} pagination={false} />
+        <Table rowKey={({ index }) => index} id="table_1" dataSource={dataSource} columns={columns} pagination={false} />
         <Flex style={{ marginTop: '10px' }} wrap gap="small" justify="flex-end" >
             <Button type="primary" danger onClick={() => { setDataSource(source) }}>
                 Sıfırla

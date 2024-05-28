@@ -245,7 +245,7 @@ const Padua = () => {
     ];
 
     const handleDownload = () => {
-        html2canvas(document.getElementById('table')).then(function (canvas) {
+        html2canvas(document.getElementById('table_2')).then(function (canvas) {
             canvas.toBlob((blob) => {
                 saveAs(blob, "Padua Envanteri.png");
             });
@@ -261,7 +261,7 @@ Washington Eyalet Üniversitesi Gözden Geçirilmiş Formu
         <Title level={5}>2 = Oldukça</Title>
         <Title level={5}>3 = Çok</Title>
         <Title level={5}>4 = Çok Fazla</Title>
-        <Table rowKey={({ index }) => index} id="table" dataSource={dataSource} columns={columns} pagination={false} />
+        <Table rowKey={({ index }) => index} id="table_2" dataSource={dataSource} columns={columns} pagination={false} />
         <Flex style={{ marginTop: '10px' }} wrap gap="small" justify="flex-end" >
             <Button type="primary" danger onClick={() => { setDataSource(source) }}>
                 Sıfırla

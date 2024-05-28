@@ -190,9 +190,9 @@ const Child = () => {
   ];
 
   const handleDownload = () => {
-    html2canvas(document.getElementById('table')).then(function (canvas) {
+    html2canvas(document.getElementById('table_4')).then(function (canvas) {
       canvas.toBlob((blob) => {
-        saveAs(blob, "obsesif inanışlar ölçeği.png");
+        saveAs(blob, "Çocukluk Çağı Travma Ölçeği.png");
       });
     });
   }
@@ -206,7 +206,7 @@ const Child = () => {
     <Title level={5}>4 = Sık olarak </Title>
     <Title level={5}>5 = Çok sık</Title>
     <Title level={5}>Çocukluğumda ya da ilk gençliğimde... </Title>
-    <Table rowKey={({ index }) => index} id="table" dataSource={dataSource} columns={columns} pagination={false} />
+    <Table rowKey={({ index }) => index} id="table_4" dataSource={dataSource} columns={columns} pagination={false} />
     <Flex style={{ marginTop: '10px' }} wrap gap="small" justify="flex-end" >
       <Button type="primary" danger onClick={() => { setDataSource(source) }}>
         Sıfırla

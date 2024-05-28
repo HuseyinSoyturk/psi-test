@@ -272,9 +272,9 @@ const Obsesif = () => {
     ];
 
     const handleDownload = () => {
-        html2canvas(document.getElementById('table')).then(function (canvas) {
+        html2canvas(document.getElementById('table_3')).then(function (canvas) {
             canvas.toBlob((blob) => {
-                saveAs(blob, "obsesif inanışlar ölçeği.png");
+                saveAs(blob, "Obsesif İnanışlar Ölçeği.png");
             });
         });
     }
@@ -290,7 +290,7 @@ const Obsesif = () => {
         <Title level={5}>5 = Çok Az Katılıyorum</Title>
         <Title level={5}>6 = Oldukça Katılıyorum</Title>
         <Title level={5}>7 = Tamamen Katılıyorum</Title>
-        <Table rowKey={({ index }) => index} id="table" dataSource={dataSource} columns={columns} pagination={false} />
+        <Table rowKey={({ index }) => index} id="table_3" dataSource={dataSource} columns={columns} pagination={false} />
         <Flex style={{ marginTop: '10px' }} wrap gap="small" justify="flex-end" >
             <Button type="primary" danger onClick={() => { setDataSource(source) }}>
                 Sıfırla

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { Button, ConfigProvider, Input, Space, Tabs, theme } from 'antd';
+import React from 'react';
+import { ConfigProvider, Tabs, theme } from 'antd';
 import DunyaIliskin from './DunyaIlıskın';
 import Obsesif from './Obsesif';
 import Padua from './Padua';
 import Child from './Child';
+import Young from './Young';
 
 const App = () => {
   const tabs = [
@@ -29,7 +30,8 @@ const App = () => {
     },
     {
       label: 'Young-E',
-      id: '4'
+      id: '4',
+      children: <Young />
     },
   ]
 
