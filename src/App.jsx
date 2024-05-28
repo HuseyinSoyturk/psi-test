@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button, ConfigProvider, Input, Space, Tabs, theme } from 'antd';
 import DunyaIliskin from './DunyaIlıskın';
 import Obsesif from './Obsesif';
+import Padua from './Padua';
+import Child from './Child';
 
 const App = () => {
   const tabs = [
@@ -17,11 +19,13 @@ const App = () => {
     },
     {
       label: 'Padua Envanteri',
-      id: '2'
+      id: '2',
+      children: <Padua />
     },
     {
       label: 'Çocukluk Çağı Travma Ölçeği',
-      id: '3'
+      id: '3',
+      children: <Child />
     },
     {
       label: 'Young-E',
@@ -29,11 +33,6 @@ const App = () => {
     },
   ]
 
-  // const [activeKey, setActiveKey] = useState('1')
-  // const onKeyChange = (key) => {
-  //   console.log(key);
-  //   setActiveKey(key)
-  // }
   return <ConfigProvider
     theme={{
       algorithm: theme.darkAlgorithm,
@@ -44,9 +43,6 @@ const App = () => {
     }
   >
     <Tabs
-      // defaultActiveKey="0"
-      // activeKey={activeKey}
-      // onChange={onKeyChange}
       type="card"
       items={tabs.map((tab) => {
         return {
