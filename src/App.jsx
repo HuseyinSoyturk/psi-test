@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, ConfigProvider, Input, Space, Tabs, theme } from 'antd';
 import DunyaIliskin from './DunyaIlıskın';
+import Obsesif from './Obsesif';
 
 const App = () => {
   const tabs = [
@@ -11,7 +12,8 @@ const App = () => {
     },
     {
       label: 'Obsesif İnanışlar Ölçeği',
-      id: '1'
+      id: '1',
+      children: <Obsesif />
     },
     {
       label: 'Padua Envanteri',

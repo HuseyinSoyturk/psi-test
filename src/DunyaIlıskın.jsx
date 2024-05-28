@@ -216,7 +216,12 @@ const DunyaIliskin = () => {
     return <>
         <Title level={2} style={{ textAlign: 'center' }}>Dünyaya İlişkin Varsayımlar Ölçeği</Title>
         <Title level={5}>Aşağıda çeşitli ifadeler ve her bir ifadenin yanında 1’den 6’ya kadar rakamlar yer almaktadır. Her bir ifadeyi okuduktan sonra, o ifadeye ne derece katılıp katılmadığınızı belirtmek için, yanında yer alan bölmedeki uygun rakamı işaretleyiniz. Lütfen hiçbir cümleyi yanıtsız bırakmayınız.</Title>
-        <Title level={5}>(1 = Kesinlikle Katılmıyorum ............................................ 6 = Tamamen Katılıyorum)</Title>
+        <Title level={5}>1 = Kesinlikle Katılmıyorum</Title>
+        <Title level={5}>2 = Orta Düzeyde Katılmıyorum</Title>
+        <Title level={5}>3 = Çok Az Katılmıyorum</Title>
+        <Title level={5}>4 = Çok Az Katılıyorum</Title>
+        <Title level={5}>5 = Oldukça Katılıyorum</Title>
+        <Title level={5}>6 = Tamamen Katılıyorum</Title>
         <Table rowKey={({ index }) => index} id="table" dataSource={dataSource} columns={columns} pagination={false} />
         <Flex style={{ marginTop: '10px' }} wrap gap="small" justify="flex-end" >
             <Button type="primary" danger onClick={() => { setDataSource(source) }}>
