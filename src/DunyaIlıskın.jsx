@@ -6,7 +6,7 @@ const { Title } = Typography;
 import { saveAs } from 'file-saver';
 
 
-const DunyaIliskin = () => {
+const DunyaIliskin = ({ setloading }) => {
 
     const source = [
         {
@@ -206,11 +206,13 @@ const DunyaIliskin = () => {
     ];
 
     const handleDownload = () => {
-        html2canvas(document.getElementById('table_1')).then(function (canvas) {
+        setloading(true)
+        html2canvas(document.getElementById('table_1'), { windowWidth: 1920 }).then(function (canvas) {
             canvas.toBlob((blob) => {
                 saveAs(blob, "Dünyaya İlişkin Varsayımlar Ölçeği.png");
+                setloading(false)
             });
-        });
+        }).finally(() => setloading(false));
     }
 
     return <>

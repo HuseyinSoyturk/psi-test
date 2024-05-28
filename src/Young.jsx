@@ -6,7 +6,7 @@ const { Title } = Typography;
 import { saveAs } from 'file-saver';
 
 
-const Young = () => {
+const Young = ({ setloading }) => {
 
   const source = [
     { "index": 1, "sentence": "Beni sevdi ve bana özel birisi gibi davrandı.", "anneRate": 1, "babaRate": 1 },
@@ -145,11 +145,13 @@ const Young = () => {
   ];
 
   const handleDownload = () => {
-    html2canvas(document.getElementById('table_5')).then(function (canvas) {
+    setloading(true)
+    html2canvas(document.getElementById('table_5'), { windowWidth: 1920 }).then(function (canvas) {
       canvas.toBlob((blob) => {
         saveAs(blob, "Young-E.png");
+        setloading(false)
       });
-    });
+    }).finally(() => setloading(false));
   }
 
   return <>

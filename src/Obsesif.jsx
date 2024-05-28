@@ -6,7 +6,7 @@ const { Title } = Typography;
 import { saveAs } from 'file-saver';
 
 
-const Obsesif = () => {
+const Obsesif = ({ setloading }) => {
 
     const source = [
         {
@@ -272,11 +272,13 @@ const Obsesif = () => {
     ];
 
     const handleDownload = () => {
-        html2canvas(document.getElementById('table_3')).then(function (canvas) {
+        setloading(true)
+        html2canvas(document.getElementById('table_3'), { windowWidth: 1920 }).then(function (canvas) {
             canvas.toBlob((blob) => {
                 saveAs(blob, "Obsesif İnanışlar Ölçeği.png");
+                setloading(false)
             });
-        });
+        }).finally(() => setloading(false));
     }
 
     return <>

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Button, Flex, Radio, Table, Typography } from 'antd';
-import { Document, Packer, Paragraph, TextRun } from "docx";
 import html2canvas from "html2canvas";
 const { Title } = Typography;
 import { saveAs } from 'file-saver';
 
 
-const Child = () => {
+const Child = ({ setloading }) => {
 
   const source = [
     {
@@ -190,11 +189,13 @@ const Child = () => {
   ];
 
   const handleDownload = () => {
-    html2canvas(document.getElementById('table_4')).then(function (canvas) {
+    setloading(true)
+    html2canvas(document.getElementById('table_4'), { windowWidth: 1920 }).then(function (canvas) {
       canvas.toBlob((blob) => {
         saveAs(blob, "Çocukluk Çağı Travma Ölçeği.png");
+        setloading(false)
       });
-    });
+    }).finally(() => setloading(false));
   }
 
   return <>
